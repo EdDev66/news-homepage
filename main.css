@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{
+    --orange:hsl(35, 77%, 62%);
+    --red:hsl(5, 85%, 63%);
+    --off-white:hsl(36, 100%, 99%);
+    --gray:hsl(233, 8%, 79%);
+    --blue: hsl(236, 13%, 42%);
+    --dark-blue:hsl(240, 100%, 5%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--orange);
+    font-size: 2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+.header {
+    align-items: center;
+    padding: 1.5em 0;
+}
+
+.grid .logo {
+    grid-column: span 6;
+}
+
+.grid > nav {
+    grid-column: span 6;
+    justify-self: end;
+}
+
+.grid > .navigation a {
+    margin-left: 10px;
+    display: none;
+    color: var(--blue);
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-top: 180px;
+    gap: 30px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    animation: slideIn 0.5s forwards;
+}
+
+
+@keyframes slideIn {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.show_menu {
+    display: flex;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-nav img {
+    cursor: pointer;
+    width: 40px;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+}
+
+.mobile-nav a {
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: var(--red) !important;
+}
+
+.hamburger img {
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.right__col {
+    display: grid;
+}
+
+.left__col img {
+    width: 100%;
+}
+
+.web-future-h1 {
+    align-self: flex-end;
+    font-size: 3.6em;
+    font-weight: 700;
+    margin: 20px 0;
+    line-height: 0.9;
+}
+
+.col-2 {
+    font-size: 1.125em;
+}
+
+.col-2 p {
+    margin: 10px 0;
+    line-height: 2;
+    color: var(--blue);
+}
+
+.grid .read-more {
+    grid-column: span 3;
+    align-self: flex-end;
+}
+
+.button {
+    display: inline-block;
+    padding: 1em 3em;
+    background-color: hsl(5, 85%, 63%);
+    color: #fff;
+    border: none;
+    margin: 1em 0;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: var(--dark-blue);
+}
+
+.news {
+    display: grid;
+    gap: 1rem;
+}
+
+.news__details {
+    color: var(--blue);
+}
+
+.line{
+    height: 1px;
+    border: 0.1px solid var(--blue);
+}
+
+.tech__news {
+    display: flex;
+    gap: 1rem;
+}
+
+.news__heading:hover {
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.attribution {
+    margin-top: 50px;
+}
+
+
+.number {
+    color: var(--gray);
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+
+.tech__col-1 {
+    display: flex;
+}
+
+.tech__col-1 img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.tech__col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right__col {
+    color: #fff;
+    background: var(--dark-blue);
+    padding: 3em;
+    gap: 1.5rem;
+}
+
+.banner__bottom {
+    margin-top: 3em;
+    display: grid;
+    gap: 2em;
+}
+
+.tech__col-2 h3:hover {
+    cursor: pointer;
+    color: var(--red);
+}
+
+
+@media (min-width: 850px) {
+    body{
+    display: grid;
+    max-width: 1206px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    }
+
+    h2{
+        height: 0;
+    }
+    .news__heading{
+        height: 0;
+    }
+    
+    .navigation a {
+        display: inline-block !important;
+    }
+
+    .hamburger img {
+        display: none;
+    }
+
+    .banner__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-content {
+        display: flex;
+        gap: 2em;
+    }
+
+    .text-content {
+        display: flex;
+        gap: 3em;
+        padding-top: 30px;
+    }
+
+    .right__col {
+       padding: 1em 2em;
+    }
+
+    .col-2 {
+        max-width: 400px;
+    }
+}
